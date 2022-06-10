@@ -7,7 +7,7 @@ const Product = require("../models/productModels");
 router.get("/", async(req, res) => {
     try{
         const products = await Product.find().lean().exec();
-        return res.status(200).send(products);
+        return res.status(200).send(products)
     }catch(err){
         return res.status(500).send(err.message);
     }
